@@ -1,24 +1,26 @@
 public class Yazdirma {
-    private void baslikYazdir(String symbol){
-        System.out.println(symbol+"*********");
-        System.out.print("*");
+    private String creatHeading(String symbol){
+        return symbol+"*********\n*";
     }
-   private void altmetinyazdir(){
-        System.out.println("*\n*********");
+   private String creatSubtext(){
+        return"*\n*********";
     }
     public void yazdir(int sayi){
-        baslikYazdir("i");
-        System.out.printf("%9d", sayi);
-        altmetinyazdir();
+        System.out.printf(creatHeading("i"));
+        var output=String.format("%9d", sayi);
+        System.out.print(output);
+        System.out.println(creatSubtext());
     }
     public void yazdir(float ondaliklisayi){
-        baslikYazdir("f");
-        System.out.printf("%8.4f", ondaliklisayi);
-        altmetinyazdir();
+        System.out.printf(creatHeading("f"));
+        var output=String.format("%8.4f",ondaliklisayi);
+        System.out.print(output);
+        System.out.println(creatSubtext());
     }
     public void yazdir(String metin){
-        baslikYazdir("S");
-        System.out.printf("%s",metin);
-        altmetinyazdir();
+        System.out.printf(creatHeading("s"));
+        var output=String.format("%s",metin);
+        System.out.print(output);
+        System.out.println(creatSubtext());
     }
 }
