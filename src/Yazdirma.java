@@ -5,22 +5,34 @@ public class Yazdirma {
    private String creatSubtext(){
         return"*\n*********";
     }
-    public void yazdir(int sayi){
-        System.out.printf(creatHeading("i"));
-        var output=String.format("%9d", sayi);
-        System.out.print(output);
-        System.out.println(creatSubtext());
+    private String prepare(int number){
+        String output="";
+        output+=creatHeading("i");
+        output+=String.format("%9d", number);
+        output+=creatSubtext();
+        return output;
     }
-    public void yazdir(float ondaliklisayi){
-        System.out.printf(creatHeading("f"));
-        var output=String.format("%8.4f",ondaliklisayi);
-        System.out.print(output);
-        System.out.println(creatSubtext());
+    private String prepare(float dnumber){
+        String output="";
+        output+=creatHeading("f");
+        output+=String.format("%8.4f", dnumber);
+        output+=creatSubtext();
+        return output;
     }
-    public void yazdir(String metin){
-        System.out.printf(creatHeading("s"));
-        var output=String.format("%s",metin);
-        System.out.print(output);
-        System.out.println(creatSubtext());
+    private String prepare(String text){
+        String output="";
+        output+=creatHeading("s");
+        output+=String.format("%s",text);
+        output+=creatSubtext();
+        return output;
+    }
+    public void yazdir(int number){
+        System.out.println(prepare(number));
+    }
+    public void yazdir(float dnumber){
+        System.out.println(prepare(dnumber));
+    }
+    public void yazdir(String text){
+        System.out.println(prepare(text));
     }
 }
